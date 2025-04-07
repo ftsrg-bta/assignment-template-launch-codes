@@ -54,9 +54,9 @@
   ],
   "chaincodes": [
     {
-      "name": "kv-node",
+      "name": "launch-codes",
       "version": "0.1.0",
-      "lang": "node",
+      "lang": "java",
       "channel": "channel1",
       "directory": "../chaincode/"
     }

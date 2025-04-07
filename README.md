@@ -1,4 +1,18 @@
-# Hyperledger Fabric assignment template
+# Hyperledger Fabric assignment: L(a)unch Codes
+
+> [!IMPORTANT]
+> Please choose the language of your implementation and indicate it in the alert block below.
+> Do not forget to rename the `chaincode-*/` directory to `chaincode/` and please remove the other `chaincode-*/` directories.
+>
+> Starter projects:
+>
+>  * Java: [`chaincode-java/`](chaincode-java/)
+>  * JavaScript / TypeScript: **TBD**
+>  * Go: **TBD**
+
+> [!NOTE]
+> Chosen implementation language: <!-- TODO -->
+
 
 ## Repository structure
 
