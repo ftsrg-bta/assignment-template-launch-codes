@@ -22,9 +22,20 @@ Design and implement a smart contract supporting the above access management pro
 * Similarly, events are prepared in [`hu.bme.mit.ftsrg.chaincode.launchcodes.events`](src/main/java/hu/bme/mit/ftsrg/chaincode/launchcodes/events)
 * **Your task is to implement the contract in [`LaunchCodes.java`](src/main/java/hu/bme/mit/ftsrg/chaincode/launchcodes/contract/LaunchCodes.java)** by filling in the method bodies
 
-> [!TIP]
-> There are additional specifications as comments in [`LaunchCodes.java`](src/main/java/hu/bme/mit/ftsrg/chaincode/launchcodes/contract/LaunchCodes.java)
-
+> [!IMPORTANT]
+> You must follow these rules when preparing your assignment:
+>
+> 1. Every **SUBMIT** transaction must emit either a `CloseDoorEvent` or an `OpenDoorEvent` in case of successful execution, for example:
+>  
+>     ```java
+>     ctx.getStub().setEvent(CloseDoorEvent.class.getName(), serialize(closeDoorEvent));
+>     ```
+> 2. Every **SUBMIT** transaction must set the relevant entities and their relation to a consistent state (see their documentation).
+> 3. You cannot change the declaration of asset or event classes or add/use new classes that would be persisted on the ledger!
+> 4. You can declare **additional** utility methods in the contract class (or additional helper classes), but you cannot change the declaration of the existing contract methods!
+> 5. Request ID parameters are always passed in composite key form, as returned by `CreateCompositeKey`.
+> 6. Other simpler IDs are passed in simple "business ID" form (that was used during their registration).
+> 7. The `AssetBase` interface implementations of asset classes (the `getTypeForCompositeKey` and `getAttributesForCompositeKey` methods) indicate how their composite key is composed. You must conform to this key format every time.
 
 ## Additional Tasks
 

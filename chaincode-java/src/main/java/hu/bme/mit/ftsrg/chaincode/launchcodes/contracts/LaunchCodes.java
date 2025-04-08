@@ -27,15 +27,6 @@ import org.hyperledger.fabric.contract.annotation.Transaction.TYPE;
 @Default
 public final class LaunchCodes implements ContractInterface {
 
-  /// SPECIFICATION
-  /// 1. Every SUBMIT transaction must emit either a CloseDoorEvent or an OpenDoorEvent in case of successful execution.
-  ///    E.g., ctx.getStub().setEvent(CloseDoorEvent.class.getName(), serialize(closeDoorEvent));
-  /// 2. Every SUBMIT transaction must set the relevant entities to a consistent state (see their documentation).
-  /// 3. You cannot change the declaration of asset or event classes or add/use new classes that would be persisted on the ledger!
-  /// 4. You can declare ADDITIONAL utility methods in the contract class, but you cannot change the declaration of the existing contract methods! 
-  /// 5. Request ID parameters are always passed in composite key form, as returned by CreateCompositeKey.
-  /// 6. Other simpler IDs are passed in simple "business ID" form (that was used during their registration).
-
   @Transaction(name = "Ping", intent = TYPE.EVALUATE)
   public String ping(Context ignoredCtx) {
     return "Pong";
