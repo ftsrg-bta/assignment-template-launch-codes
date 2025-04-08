@@ -1,13 +1,6 @@
 /* SPDX-License-Identifier: Apache-2.0 */
 package hu.bme.mit.ftsrg.chaincode.launchcodes.contracts;
 
-import hu.bme.mit.ftsrg.chaincode.launchcodes.assets.EntryRequest;
-import hu.bme.mit.ftsrg.chaincode.launchcodes.assets.ExitRequest;
-import hu.bme.mit.ftsrg.chaincode.launchcodes.assets.SecureFacility;
-import hu.bme.mit.ftsrg.chaincode.launchcodes.assets.ShiftChangeRequest;
-import hu.bme.mit.ftsrg.chaincode.launchcodes.assets.Soldier;
-import hu.bme.mit.ftsrg.chaincode.launchcodes.assets.Staff;
-
 import org.hyperledger.fabric.contract.Context;
 import org.hyperledger.fabric.contract.ContractInterface;
 import org.hyperledger.fabric.contract.annotation.Contact;
@@ -50,31 +43,24 @@ public final class LaunchCodes implements ContractInterface {
 
   @Transaction(name = "RegisterStaffCard", intent = TYPE.SUBMIT)
   public void registerStaffCard(Context ctx, String cardID, String carHolderName) {
-    var staffKey = ctx.getStub().createCompositeKey(Staff.class.getName(), cardID);
     // ...
   }
 
   @Transaction(name = "RegisterSoldierCard", intent = TYPE.SUBMIT)
   public void registerSoldierCard(Context ctx, String cardID, String carHolderName) {
-    var soldierKey = ctx.getStub().createCompositeKey(Soldier.class.getName(), cardID);
     // ...
   }
 
   @Transaction(name = "RegisterSecureFacility", intent = TYPE.SUBMIT)
   public void registerSecureFacility(
       Context ctx, String lockID, String facilityName, String soldierOneID, String soldierTwoID) {
-    var facilityKey = ctx.getStub().createCompositeKey(SecureFacility.class.getName(), lockID);
     // ...
   }
 
   @Transaction(name = "RequestEntry", intent = TYPE.SUBMIT)
   public String requestEntry(Context ctx, String cardID, String lockID) {
-    var requestKey =
-        ctx.getStub()
-            .createCompositeKey(
-                EntryRequest.class.getName(), lockID, ctx.getStub().getTxTimestamp().toString());
     // ...
-    return requestKey.toString();
+    return null; // return the request ID
   }
 
   @Transaction(name = "ApproveEntry", intent = TYPE.SUBMIT)
@@ -96,12 +82,8 @@ public final class LaunchCodes implements ContractInterface {
 
   @Transaction(name = "RequestExit", intent = TYPE.SUBMIT)
   public String requestExit(Context ctx, String cardID, String lockID) {
-    var requestKey =
-        ctx.getStub()
-            .createCompositeKey(
-                ExitRequest.class.getName(), lockID, ctx.getStub().getTxTimestamp().toString());
     // ...
-    return requestKey.toString();
+    return null; // return the request ID
   }
 
   @Transaction(name = "ApproveExit", intent = TYPE.SUBMIT)
@@ -124,14 +106,8 @@ public final class LaunchCodes implements ContractInterface {
   @Transaction(name = "InitiateShiftChange", intent = TYPE.SUBMIT)
   public String initiateShiftChange(
       Context ctx, String lockID, String newSoldiersID, String oldSoldiersID) {
-    var requestKey =
-        ctx.getStub()
-            .createCompositeKey(
-                ShiftChangeRequest.class.getName(),
-                lockID,
-                ctx.getStub().getTxTimestamp().toString());
     // ...
-    return requestKey.toString();
+    return null; // return the request ID
   }
 
   @Transaction(name = "ApproveShiftChange", intent = TYPE.SUBMIT)

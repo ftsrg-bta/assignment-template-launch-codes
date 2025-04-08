@@ -16,8 +16,18 @@ import lombok.experimental.FieldDefaults;
 @Builder(toBuilder = true)
 @FieldDefaults(level = AccessLevel.PRIVATE)
 /// This class represents a staff card.
-public class Staff {
+public class Staff implements AssetBase {
   String cardID; // ID of the card
   String cardHolderName; // Name of the card holder
   String secureFacilityID; // ID of the secure facility the staff is visiting, if any, otherwise null
+
+  @Override
+  public String getTypeForCompositeKey() {
+    return Staff.class.getName();
+  }
+  
+  @Override
+  public String[] getAttributesForCompositeKey() {
+    return new String[] {cardID};
+  }
 }

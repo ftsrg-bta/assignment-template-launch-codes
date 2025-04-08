@@ -23,7 +23,7 @@ enum ShiftChangeRequestStatus {
 @Builder(toBuilder = true)
 @FieldDefaults(level = AccessLevel.PRIVATE)
 /// This class represents a shift change request for soldiers in a secure facility.
-public class ShiftChangeRequest {
+public class ShiftChangeRequest implements AssetBase {
   String secureFacilityID; // ID of the secure facility
   String requestTimestamp; // Timestamp of the request
 
@@ -31,4 +31,14 @@ public class ShiftChangeRequest {
   String oldSoldiersID; // ID of the old soldier
 
   ShiftChangeRequestStatus status; // Status of the request
+
+  @Override
+  public String getTypeForCompositeKey() {
+    return ShiftChangeRequest.class.getName();
+  }
+  
+  @Override
+  public String[] getAttributesForCompositeKey() {
+    return new String[] {secureFacilityID, requestTimestamp};
+  }
 }
