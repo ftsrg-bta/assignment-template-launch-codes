@@ -7,7 +7,6 @@ import hu.bme.mit.ftsrg.chaincode.launchcodes.assets.SecureFacility;
 import hu.bme.mit.ftsrg.chaincode.launchcodes.assets.ShiftChangeRequest;
 import hu.bme.mit.ftsrg.chaincode.launchcodes.assets.Soldier;
 import hu.bme.mit.ftsrg.chaincode.launchcodes.assets.Staff;
-import hu.bme.mit.ftsrg.chaincode.launchcodes.events.CloseDoorEvent;
 
 import org.hyperledger.fabric.contract.Context;
 import org.hyperledger.fabric.contract.ContractInterface;
