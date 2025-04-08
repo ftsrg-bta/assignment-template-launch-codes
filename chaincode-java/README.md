@@ -32,7 +32,7 @@ Design and implement a smart contract supporting the above access management pro
 >     ```
 > 2. Every **SUBMIT** transaction must set the relevant entities and their relation to a consistent state (see their documentation).
 > 3. You cannot change the declaration of asset or event classes or add/use new classes that would be persisted on the ledger!
-> 4. You can declare **additional** utility methods in the contract class (or additional helper classes), but you cannot change the declaration of the existing contract methods!
+> 4. You can declare **additional** utility methods in the contract class (or additional helper classes), but you cannot change the declaration of the existing contract methods (**except** for the type of the `Context` parameter when using a custom implementation)!
 > 5. Request ID parameters are always passed in composite key form, as returned by `CreateCompositeKey`.
 > 6. Other simpler IDs are passed in simple "business ID" form (that was used during their registration).
 > 7. The `AssetBase` interface implementations of asset classes (the `getTypeForCompositeKey` and `getAttributesForCompositeKey` methods) indicate how their composite key is composed. You must conform to this key format every time.
