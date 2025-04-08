@@ -2,6 +2,7 @@
 
 > [!IMPORTANT]
 > The test network will not work with the default configuration unless one of the `chaincode-*/` directories in the repository root become `chaincode/`.
+> Also, do not forget to adjust the `lang` property of the chaincode (`java`, `node`, or `golang`).
 > See the [README](../README.md).
 
 
