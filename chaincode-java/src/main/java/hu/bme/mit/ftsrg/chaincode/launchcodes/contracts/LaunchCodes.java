@@ -163,26 +163,14 @@ public final class LaunchCodes implements ContractInterface {
     return null;
   }
 
-  @Transaction(name = "GetStaffCard", intent = TYPE.EVALUATE)
-  public String getStaffCard(Context ctx, String cardID) {
+  @Transaction(name = "GetCard", intent = TYPE.EVALUATE)
+  public String getCard(Context ctx, String cardID) {
     // ...
     return null;
   }
 
-  @Transaction(name = "GetAllStaffCards", intent = TYPE.EVALUATE)
-  public String getAllStaffCards(Context ctx) {
-    // ...
-    return null;
-  }
-
-  @Transaction(name = "GetSoldierCard", intent = TYPE.EVALUATE)
-  public String getSoldierCard(Context ctx, String cardID) {
-    // ...
-    return null;
-  }
-
-  @Transaction(name = "GetAllSoldierCards", intent = TYPE.EVALUATE)
-  public String getAllSoldierCards(Context ctx) {
+  @Transaction(name = "GetAllCards", intent = TYPE.EVALUATE)
+  public String getAllCards(Context ctx) {
     // ...
     return null;
   }
