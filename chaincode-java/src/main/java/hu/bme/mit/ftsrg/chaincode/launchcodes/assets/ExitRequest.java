@@ -9,14 +9,6 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 import lombok.experimental.FieldDefaults;
 
-/// This enum represents the possible statuses of an exit request.
-enum ExitRequestStatus {
-  PENDING, // Request is pending approval
-  APPROVED, // Request has been approved by two soldiers
-  REJECTED, // Request has been rejected
-  EXITED // Requester has logged exit from the secure facility
-}
-
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
