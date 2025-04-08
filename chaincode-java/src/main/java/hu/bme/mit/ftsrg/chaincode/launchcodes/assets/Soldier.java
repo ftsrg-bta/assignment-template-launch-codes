@@ -19,13 +19,13 @@ import lombok.experimental.FieldDefaults;
 public class Soldier implements AssetBase {
   String cardID; // ID of the card
   String cardHolderName; // Name of the card holder
-  String secureFacilityID; // ID of the secure facility the guard is assigned to, if any, otherwise null
+  String secureFacilityID; // ID of the secure facility the guard is assigned to, or null
 
   @Override
   public String getTypeForCompositeKey() {
     return Soldier.class.getName();
   }
-  
+
   @Override
   public String[] getAttributesForCompositeKey() {
     return new String[] {cardID};

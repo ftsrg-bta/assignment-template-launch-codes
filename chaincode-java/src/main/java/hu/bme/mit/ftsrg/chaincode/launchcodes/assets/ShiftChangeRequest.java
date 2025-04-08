@@ -36,7 +36,7 @@ public class ShiftChangeRequest implements AssetBase {
   public String getTypeForCompositeKey() {
     return ShiftChangeRequest.class.getName();
   }
-  
+
   @Override
   public String[] getAttributesForCompositeKey() {
     return new String[] {secureFacilityID, requestTimestamp};

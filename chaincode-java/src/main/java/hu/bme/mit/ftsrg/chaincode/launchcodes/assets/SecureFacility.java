@@ -33,7 +33,7 @@ public class SecureFacility implements AssetBase {
   public String getTypeForCompositeKey() {
     return SecureFacility.class.getName();
   }
-  
+
   @Override
   public String[] getAttributesForCompositeKey() {
     return new String[] {lockID};

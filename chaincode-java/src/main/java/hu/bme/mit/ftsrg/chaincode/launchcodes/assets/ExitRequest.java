@@ -40,7 +40,7 @@ public class ExitRequest implements AssetBase {
   public String getTypeForCompositeKey() {
     return ExitRequest.class.getName();
   }
-  
+
   @Override
   public String[] getAttributesForCompositeKey() {
     return new String[] {secureFacilityID, requestTimestamp};
