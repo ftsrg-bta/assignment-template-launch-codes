@@ -1,10 +1,7 @@
 # Hyperledger Fabric Dev Network with Fablo
 
 > [!IMPORTANT]
-> The test network will not work with the default configuration unless one of the `chaincode-*/` directories in the repository root become `chaincode/`.
-> Also, do not forget to adjust the `lang` property of the chaincode (`java`, `node`, or `golang`).
-> See the [README](../README.md).
-
+> Set the `lang` and `directory` attributes in the `chaincode` section of the [fablo-config.json](fablo-config.json) file to the chaincode project path and language you want to deploy.
 
 ## Spin up the test network
 

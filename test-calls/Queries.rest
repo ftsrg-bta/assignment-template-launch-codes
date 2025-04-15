@@ -1,0 +1,44 @@
+# Set the required Fablo organization environment
+
+@token = {{enroll.response.body.token}}
+
+###
+
+# Retrieve the authentication token using the set organization's admin secret
+# @name enroll
+POST http://{{host}}:{{port}}/user/enroll
+Content-Type: application/json
+Authorization: "Bearer "
+
+< {{auth-file}}
+
+###
+
+# Ping the smart contract
+# @name Ping
+POST http://{{host}}:{{port}}/query/{{channel}}/{{chaincode}}
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "method": "Ping",
+    "args": [],
+    "transient": {}
+}
+
+###
+
+# @name GetSecureFacility
+POST http://{{host}}:{{port}}/query/{{channel}}/{{chaincode}}
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "method": "GetSecureFacility",
+    "args": ["1"],
+    "transient": {}
+}
+
+###
+
+// Implement what you want to use

@@ -16,8 +16,10 @@
 
 ## Repository structure
 
-* Chaincode specification + implementation: [`chaincode/`](chaincode/)
+* Chaincode specification + implementation: `chaincode-*/` directories
+* Chaincode unit test skeleton for Java: [`LaunchCodesTest.java`](./chaincode-java/src/test/java/hu/bme/mit/ftsrg/chaincode/launchcodes/contracts/LaunchCodesTest.java)
 * Test network: [`test-network/`](test-network/)
+* Optional test HTTP call examples using the [`REST Client`](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) VS-Code extension and the generated [Fablo REST APIs](https://github.com/fablo-io/fablo-rest): [`test-calls/`](./test-calls/)
 
 
 ## Documentation
